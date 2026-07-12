@@ -56,7 +56,7 @@ export default function BrainchainLabs() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h3 className="text-2xl font-medium text-white mb-4 flex items-center gap-3">
-                <span className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                <span className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white border border-white/20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
                 </span>
                 Mission
@@ -73,7 +73,7 @@ export default function BrainchainLabs() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <h3 className="text-2xl font-medium text-white mb-4 flex items-center gap-3">
-                <span className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400">
+                <span className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white border border-white/20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12h4l3-9 5 18 3-9h5"/></svg>
                 </span>
                 Vision
