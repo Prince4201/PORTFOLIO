@@ -10,11 +10,11 @@ export default function BrainchainLabs() {
     offset: ["start end", "end start"]
   });
 
-  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const yContent = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+  const yBg = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]); // Moved slightly above
+  const yContent = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
 
   return (
-    <section id="brainchain" ref={ref} className="relative z-20 bg-black py-32 px-8 overflow-hidden">
+    <section id="brainchain" ref={ref} className="relative z-20 bg-black pt-32 pb-16 px-8 overflow-hidden">
       <motion.div style={{ y: yBg }} className="absolute inset-0 pointer-events-none flex justify-center items-center">
         <div className="w-[800px] h-[800px] bg-blue-600/20 rounded-full blur-[120px] opacity-50 animate-pulse" />
       </motion.div>
