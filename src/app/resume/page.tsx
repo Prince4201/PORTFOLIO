@@ -4,8 +4,17 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Download } from "lucide-react";
 import Link from "next/link";
 import WarpBackground from "@/components/resume/WarpBackground";
+import { useEffect, useState } from "react";
 
 export default function ResumePage() {
+  const [resumeUrl, setResumeUrl] = useState("/resume.pdf");
+
+  useEffect(() => {
+    // Force mobile browsers (especially Safari) to completely bypass their cache 
+    // by appending a unique timestamp every time the page loads.
+    setResumeUrl(`/resume.pdf?t=${Date.now()}`);
+  }, []);
+
   return (
     <main className="relative min-h-screen w-full bg-black overflow-hidden flex flex-col items-center justify-center selection:bg-white/30">
       {/* 3D Warp Background */}
@@ -31,7 +40,7 @@ export default function ResumePage() {
             </motion.button>
           </Link>
 
-          <a href="/resume.pdf" download="Prince_Jaiswal_Resume.pdf">
+          <a href={resumeUrl} download="Prince_Jaiswal_Resume.pdf">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -53,7 +62,7 @@ export default function ResumePage() {
           <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none z-10" />
 
           <iframe
-            src="/resume.pdf#view=FitH"
+            src={`${resumeUrl}#view=FitH`}
             className="w-full h-full border-none relative z-0 rounded-3xl"
             title="Prince Jaiswal Resume"
           />
