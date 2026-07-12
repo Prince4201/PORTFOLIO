@@ -130,7 +130,7 @@ export default function Overlay({
           opacity: useTransform(scrollYProgress, (v) => v >= 0.99 ? 0 : 1),
           pointerEvents: useTransform(scrollYProgress, (v) => v >= 0.99 ? "none" : "auto")
         }}
-        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[9999] w-16 h-16 md:w-20 md:h-20 rounded-[1.25rem] bg-white/5 backdrop-blur-xl border border-white/10 text-white shadow-[0_0_30px_rgba(0,0,0,0.5)] flex flex-col items-center justify-center gap-1 hover:bg-white/10 hover:scale-110 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all duration-300 group"
+        className="fixed bottom-7 right-6 md:bottom-9 md:right-8 z-[9999] w-16 h-16 md:w-20 md:h-20 rounded-[1.25rem] bg-white/5 backdrop-blur-xl border border-transparent text-white shadow-[0_0_30px_rgba(0,0,0,0.5)] flex flex-col items-center justify-center gap-1 hover:bg-white/10 hover:scale-110 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all duration-300 group"
       >
         <div className="absolute inset-0 rounded-[1.25rem] bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-30 pointer-events-none group-hover:opacity-100 transition-opacity duration-300" />
         <FileText size={30} strokeWidth={1.5} className="relative z-10 text-blue-300 drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]" />
