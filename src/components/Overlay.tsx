@@ -123,19 +123,21 @@ export default function Overlay({
         )}
       </AnimatePresence>
 
-      {/* Strategic Resume Icon Button used to perfectly cover the AI Watermark */}
+      {/* Strategic Resume Button used to perfectly cover the AI Watermark */}
       <motion.a
         href="/resume"
         style={{ 
           opacity: useTransform(scrollYProgress, (v) => v >= 0.99 ? 0 : 1),
           pointerEvents: useTransform(scrollYProgress, (v) => v >= 0.99 ? "none" : "auto")
         }}
-        className="fixed bottom-9 right-10 z-[9999] w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white/10 backdrop-blur-3xl border border-white/20 text-white shadow-[0_0_40px_rgba(0,0,0,0.8)] flex items-center justify-center hover:bg-white/20 hover:scale-110 hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] transition-all duration-300 group"
+        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[9999] w-16 h-16 md:w-20 md:h-20 rounded-[1.25rem] bg-white/5 backdrop-blur-xl border border-white/10 text-white shadow-[0_0_30px_rgba(0,0,0,0.5)] flex flex-col items-center justify-center gap-1 hover:bg-white/10 hover:scale-110 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all duration-300 group"
       >
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-50 pointer-events-none group-hover:opacity-100 transition-opacity duration-300" />
-        <FileText size={26} strokeWidth={2} className="relative z-10 text-blue-300 drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
+        <div className="absolute inset-0 rounded-[1.25rem] bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-30 pointer-events-none group-hover:opacity-100 transition-opacity duration-300" />
+        <FileText size={30} strokeWidth={1.5} className="relative z-10 text-blue-300 drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]" />
+        <span className="relative z-10 text-[9px] md:text-[10px] font-bold tracking-widest text-blue-100 opacity-70 uppercase mt-0.5">
+          RESUME
+        </span>
       </motion.a>
-
     </div>
   );
 }
