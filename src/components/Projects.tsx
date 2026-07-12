@@ -11,6 +11,7 @@ const projects = [
     category: "AI Animated Learning Platform",
     description: "Transforms educational content into visual storytelling experiences using AI-generated comic scenes, narration, and quizzes.",
     image: "https://substackcdn.com/image/fetch/$s_!RhRh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1cbae3f2-2741-4dd0-9b4f-ce4b95219ef8_1024x1024.png",
+    link: "https://toonverseai.vercel.app/", // Add your project link here
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const projects = [
     category: "Creator Outreach SaaS",
     description: "Automates creator discovery, outreach, and campaign management for agencies and businesses.",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzXo8dbdac1ebZPwQEfJhWyh_t3hc5vwUgX42_QYvQzQ&s=10",
+    link: "https://createrfind.vercel.app/", // Add your project link here
   }
 ];
 
@@ -46,7 +48,10 @@ function ProjectCard({ project, idx }: { project: any; idx: number }) {
   }
 
   return (
-    <motion.div
+    <motion.a
+      href={project.link || "#"}
+      target="_blank"
+      rel="noopener noreferrer"
       initial={{ opacity: 0, y: 50, rotateX: 10 }}
       whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -54,7 +59,7 @@ function ProjectCard({ project, idx }: { project: any; idx: number }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformPerspective: 1000 }}
-      className="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl p-3 transition-all duration-300 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] cursor-pointer"
+      className="group relative block rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl p-3 transition-all duration-300 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] cursor-pointer"
     >
       <motion.div
         className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-500 group-hover:opacity-100 z-30"
@@ -97,7 +102,7 @@ function ProjectCard({ project, idx }: { project: any; idx: number }) {
           {project.description}
         </p>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }
 
